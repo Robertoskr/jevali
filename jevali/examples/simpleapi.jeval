@@ -1,0 +1,23 @@
+[schema]
+name: string
+age: int
+money: float
+friends: 
+  type: list[friend]
+  config: 
+    required: false
+    allow-none: false
+
+[object=friend]
+name: 
+  type: string
+  config: 
+    required: false
+phone: 
+  type: string
+  config:
+    required: false
+
+[config]
+check-types=false
+

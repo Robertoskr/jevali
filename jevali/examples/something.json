@@ -1,0 +1,11 @@
+{
+	"name": "roberto",
+	"age": 16,
+	"money": 12.8,
+	"friends": [
+		{
+			"name": "alberto",
+			"age": 12
+		}
+	]
+}
