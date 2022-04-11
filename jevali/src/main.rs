@@ -5,6 +5,8 @@ use std::fs::File;
 use serde_json::{Result, Value};
 mod jevalis_parser;
 
+use crate::jevalis_parser::JevalisParser;
+
 fn main() {
     let args: Vec<String> = env::args().collect();
 
