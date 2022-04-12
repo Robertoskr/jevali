@@ -33,14 +33,25 @@ impl JevalisObjectSettings {
 }
 
 pub struct JevalisObject{
+    //an object is the building block of a schema, and it has the job
+    //of validating an object with itself
+    //for example if i have an object person, and i see person in 
+    //a json, the object is the responsible of validating the person json
+    name: String,
+    //the type, of the object
     object_type: JevalisType,
+    //only filled if the object_type is an object
+    fields: HashMap<String, JevalisObject>,
+    //the settings of the object
     settings: JevalisObjectSettings,
 }
 
 impl JevalisObject {
     pub fn new_empty() -> Self {
         Self {
+            name: String::from(""),
             object_type: JevalisType::any,
+            fields: HashMap::new(),
             settings: JevalisObjectSettings::default(),
         }
     }
