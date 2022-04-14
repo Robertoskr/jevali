@@ -8,7 +8,10 @@
 //
 //This defines a person, that can have persons as childs
 
-enum JevalisType{
+use std::collections::HashMap;
+
+
+pub enum JevalisType{
     string,
     int, 
     float,
@@ -16,6 +19,11 @@ enum JevalisType{
     list,
     object,
     any,
+}
+
+pub enum JevalisFieldType{
+    basic,
+    compound,
 }
 
 pub struct JevalisObjectSettings {
@@ -37,13 +45,13 @@ pub struct JevalisObject{
     //of validating an object with itself
     //for example if i have an object person, and i see person in 
     //a json, the object is the responsible of validating the person json
-    name: String,
+    pub name: String,
     //the type, of the object
-    object_type: JevalisType,
+    pub object_type: JevalisType,
     //only filled if the object_type is an object
-    fields: HashMap<String, JevalisObject>,
+    pub fields: HashMap<String, JevalisObject>,
     //the settings of the object
-    settings: JevalisObjectSettings,
+    pub settings: JevalisObjectSettings,
 }
 
 impl JevalisObject {
